@@ -94,9 +94,9 @@ class StocksViewModel {
                 currentTimer = newTimer
             }
             
-            if columns.isEmpty {
+            if columns.allSatisfy({ $0.isEmpty }) {
                 deltas.append(Delta(price: 0, change: 0, changePercentage: 0))
-            } else if columns.count == 6,
+            }  else if columns.count == 6,
                       let price = Double(columns[2]),
                       let change = Double(columns[3]),
                       let percentage = percentageStringToDouble(columns[4]) {
