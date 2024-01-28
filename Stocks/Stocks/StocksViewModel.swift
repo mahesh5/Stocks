@@ -117,8 +117,8 @@ class StocksViewModel {
         return deltas.map { abs($0.change) }
     }
     
-    func getDelta() -> [Delta] {
-        return deltas
+    func getDeltaCount() -> Int {
+        return deltas.count
     }
     
      func getTimerIntervals() -> [TimeInterval] {

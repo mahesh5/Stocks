@@ -56,7 +56,7 @@ class StocksViewController: UIViewController {
             self?.currentTimerIndex += 1
 
             // Check if we've reached the end of the items list
-            if self?.currentIndex ?? 0 >= self?.viewModel.getDelta().count ?? 0 {
+            if self?.currentIndex ?? 0 >= self?.viewModel.getDeltaCount() ?? 0 {
                 self?.currentIndex = 0 // Reset currentIndex to loop back to the start
             }
 
