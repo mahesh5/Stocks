@@ -8,7 +8,7 @@
 import Foundation
 class StocksViewModel {
     private var stocks: [Stock] = []
-    var deltas: [Delta] = []
+    private var deltas: [Delta] = []
     private var currentDeltaIndex = 0
     private var currentTimers: [Double] = []
     
@@ -115,6 +115,10 @@ class StocksViewModel {
     
     func getDeltasForGraph() -> [Double] {
         return deltas.map { abs($0.change) }
+    }
+    
+    func getDelta() -> [Delta] {
+        return deltas
     }
     
      func getTimerIntervals() -> [TimeInterval] {
