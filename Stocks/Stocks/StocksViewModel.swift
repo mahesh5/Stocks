@@ -43,7 +43,7 @@ class StocksViewModel {
     func loadNextDelta() {
         guard !deltas.isEmpty else { return }
         for index in stocks.indices {
-            // Assuming each stock has a corresponding delta at this point in time
+            // Map each delta to corresponding stock index
             let delta = deltas[currentDeltaIndex % deltas.count]
             stocks[index].price = delta.price
             stocks[index].change = delta.change
@@ -51,7 +51,7 @@ class StocksViewModel {
             currentDeltaIndex += 1
             // Check if we've reached the end of the deltas array
             if currentDeltaIndex >= deltas.count {
-                print("Reached end of deltas. Restarting from the first delta.")
+               //Reached end of deltas. Restarting from the first delta.
                 currentDeltaIndex = 0 // Reset the index to start applying deltas again
                 break  // Exit the loop since we're starting over
             }
